@@ -16,14 +16,152 @@
         <h1>Weather Dashboard</h1>
     </header>
     <div class="row">
-        <div class="col-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam cupiditate commodi, quae soluta sit tenetur, harum illo dolores laudantium labore, veniam neque ex dignissimos sapiente iste sed eum officiis veritatis.</div>
-        <div class="col-8">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci praesentium cumque ut perferendis optio saepe consectetur voluptatem, dolorum dolor officia earum magni qui illo reprehenderit hic, vitae, necessitatibus asperiores laboriosam?</div> 
+        <div class="col-4">
+            <div>
+                <h2>Search for a City:</h2>
+                <input type="text" name="Searched City" id="searchedCity">
+                <button class = search>Search</button>
+            </div>
+            <div>
+                <ul id="searched-history">
+                </ul>
+            </div>
+        </div>
+        <div class="col-8">
+            <div id ="day0" class = "currentDay">
+                <h2>
+                    <div id = "city"></div>
+                    <div>(<span id = "date"></span>)</div>
+                    <div id = "currentDayForcast"></div>
+
+                </h2>
+                <div>Temp:
+                    <span id="currentDayTemp"></span>°F
+                </div>
+                <div>Wind:
+                    <span id="currentDayWind"></span> MPH
+                </div>
+                <div>Humidity:
+                    <span id="currentDayHumidity"></span>%
+                </div>
+                <div>UV Index:
+                    <span id="currentDayUV"></span>
+                </div>
+            </div>
+            <div id = "fiveDay-forcast">
+                <h3>5-Day Forecast:</h3>
+                <br>
+                <div class = "row">
+                    <div id = "day1" class = "col fiveDay">
+                        <div>
+                            <span class = "day1"></span>
+                        </div>
+                        <div>
+                            <span class = "forc1"></span>
+                        </div>
+                        <div>Max Temp:
+                            <span class = "tempMax1"></span>°F
+                        </div>
+                        <div>Min Temp:
+                            <span class = "tempMin1"></span>°F
+                        </div>
+                        <div>Wind:
+                            <span class = "wind1"></span> MPH
+                        </div>
+                        <div>Humidity:
+                            <span class = "humi1"></span>%
+                        </div>
+                    </div>
+                    <div id = "day2" class = "col fiveDay">
+                        <div>
+                            <span class = "day2"></span>
+                        </div>
+                        <div>
+                            <span class = "forc2"></span>
+                        </div>
+                        <div>Max Temp:
+                            <span class = "tempMax2"></span>°F
+                        </div>
+                        <div>Min Temp:
+                            <span class = "tempMin2"></span>°F
+                        </div>
+                        <div>Wind:
+                            <span class = "wind2"></span> MPH
+                        </div>
+                        <div>Humidity:
+                            <span class = "humi2"></span>%
+                        </div>
+                    </div>
+                    <div id = "day3" class = "col fiveDay">
+                        <div>
+                            <span class = "day3"></span>
+                        </div>
+                        <div>
+                            <span class = "forc3"></span>
+                        </div>
+                        <div>Max Temp:
+                            <span class = "tempMax3"></span>°F
+                        </div>
+                        <div>Min Temp:
+                            <span class = "tempMin3"></span>°F
+                        </div>
+                        <div>Wind:
+                            <span class = "wind3"></span> MPH
+                        </div>
+                        <div>Humidity:
+                            <span class = "humi3"></span>%
+                        </div>
+                    </div>
+                    <div id = "day4" class = "col fiveDay">
+                        <div>
+                            <span class = "day4"></span>
+                        </div>
+                        <div>
+                            <span class = "forc4"></span>
+                        </div>
+                        <div>Max Temp:
+                            <span class = "tempMax4"></span>°F
+                        </div>
+                        <div>Min Temp:
+                            <span class = "tempMin4"></span>°F
+                        </div>
+                        <div>Wind:
+                            <span class = "wind4"></span> MPH
+                        </div>
+                        <div>Humidity:
+                            <span class = "humi4"></span>%
+                        </div>
+                    </div>
+                    <div id = "day5" class = "col fiveDay">
+                        <div>
+                            <span class = "day5"></span>
+                        </div>
+                        <div>
+                            <span class = "forc5"></span>
+                        </div>
+                        <div>Max Temp:
+                            <span class = "tempMax5"></span>°F
+                        </div>
+                        <div>Min Temp:
+                            <span class = "tempMin5"></span>°F
+                        </div>
+                        <div>Wind:
+                            <span class = "wind5"></span> MPH
+                        </div>
+                        <div>Humidity:
+                            <span class = "humi5"></span>%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
         crossorigin="anonymous">
     </script>
-    <script src="assets/js/script.js"></script>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script src="assets/js/sript.js"></script>
 </body>
 </html>

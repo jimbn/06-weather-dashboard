@@ -1,0 +1,23 @@
+header {
+    background-image: linear-gradient(to right, rgb(93, 130, 231), #00008b);
+    text-align: center;
+    color:white;
+    padding: 10px;
+}
+
+.currentDay {
+    border: black;
+    border-style: solid;
+    border-width: 2px;
+    margin: 10px;
+}
+
+#fiveDay-forcast {
+    margin: 10px;
+}
+
+.fiveDay {
+    color: white;
+    background-color: rgb(70, 70, 224);
+    margin: 10px;
+}
