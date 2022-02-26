@@ -19,30 +19,29 @@
         <div class="col-4">
             <div>
                 <h2>Search for a City:</h2>
-                <input type="text" name="Searched City" id="searchedCity">
-                <button class = search>Search</button>
+                <input type="text" name="searchedCity" id="searchedCity" placeholder="City Name" />
+                <button id="search">Search</button>
             </div>
-            <div>
-                <ul id="searched-history">
-                </ul>
+            <div id="searchedHistory" class="row">
+
             </div>
         </div>
         <div class="col-8">
             <div id ="day0" class = "currentDay">
                 <h2>
                     <div id = "city"></div>
-                    <div>(<span id = "date"></span>)</div>
-                    <div id = "currentDayForcast"></div>
+                    <div><span id = "date"></span></div>
+                    <img id = "currentDayForcast" />
 
                 </h2>
                 <div>Temp:
-                    <span id="currentDayTemp"></span>°F
+                    <span id="currentDayTemp"></span>
                 </div>
                 <div>Wind:
-                    <span id="currentDayWind"></span> MPH
+                    <span id="currentDayWind"></span> 
                 </div>
                 <div>Humidity:
-                    <span id="currentDayHumidity"></span>%
+                    <span id="currentDayHumidity"></span>
                 </div>
                 <div>UV Index:
                     <span id="currentDayUV"></span>
@@ -56,100 +55,90 @@
                         <div>
                             <span class = "day1"></span>
                         </div>
-                        <div>
-                            <span class = "forc1"></span>
-                        </div>
+                        <img class = "forc1" />
                         <div>Max Temp:
-                            <span class = "tempMax1"></span>°F
+                            <span class = "tempMax1"></span>
                         </div>
                         <div>Min Temp:
-                            <span class = "tempMin1"></span>°F
+                            <span class = "tempMin1"></span>
                         </div>
                         <div>Wind:
-                            <span class = "wind1"></span> MPH
+                            <span class = "wind1"></span>
                         </div>
                         <div>Humidity:
-                            <span class = "humi1"></span>%
+                            <span class = "humi1"></span>
                         </div>
                     </div>
                     <div id = "day2" class = "col fiveDay">
                         <div>
                             <span class = "day2"></span>
                         </div>
-                        <div>
-                            <span class = "forc2"></span>
-                        </div>
+                        <img class = "forc2" />
                         <div>Max Temp:
-                            <span class = "tempMax2"></span>°F
+                            <span class = "tempMax2"></span>
                         </div>
                         <div>Min Temp:
-                            <span class = "tempMin2"></span>°F
+                            <span class = "tempMin2"></span>
                         </div>
                         <div>Wind:
-                            <span class = "wind2"></span> MPH
+                            <span class = "wind2"></span>
                         </div>
                         <div>Humidity:
-                            <span class = "humi2"></span>%
+                            <span class = "humi2"></span>
                         </div>
                     </div>
                     <div id = "day3" class = "col fiveDay">
                         <div>
                             <span class = "day3"></span>
                         </div>
-                        <div>
-                            <span class = "forc3"></span>
-                        </div>
+                        <img class = "forc3" />
                         <div>Max Temp:
-                            <span class = "tempMax3"></span>°F
+                            <span class = "tempMax3"></span>
                         </div>
                         <div>Min Temp:
-                            <span class = "tempMin3"></span>°F
+                            <span class = "tempMin3"></span>
                         </div>
                         <div>Wind:
-                            <span class = "wind3"></span> MPH
+                            <span class = "wind3"></span>
                         </div>
                         <div>Humidity:
-                            <span class = "humi3"></span>%
+                            <span class = "humi3"></span>
                         </div>
                     </div>
                     <div id = "day4" class = "col fiveDay">
                         <div>
                             <span class = "day4"></span>
                         </div>
-                        <div>
-                            <span class = "forc4"></span>
-                        </div>
+                        <img class = "forc4" />
                         <div>Max Temp:
-                            <span class = "tempMax4"></span>°F
+                            <span class = "tempMax4"></span>
                         </div>
                         <div>Min Temp:
-                            <span class = "tempMin4"></span>°F
+                            <span class = "tempMin4"></span>
                         </div>
                         <div>Wind:
-                            <span class = "wind4"></span> MPH
+                            <span class = "wind4"></span>
                         </div>
                         <div>Humidity:
-                            <span class = "humi4"></span>%
+                            <span class = "humi4"></span>
                         </div>
                     </div>
                     <div id = "day5" class = "col fiveDay">
                         <div>
                             <span class = "day5"></span>
                         </div>
-                        <div>
-                            <span class = "forc5"></span>
-                        </div>
+                        <img class = "forc5" />
                         <div>Max Temp:
-                            <span class = "tempMax5"></span>°F
+                            <span class = "tempMax5"></span>
                         </div>
                         <div>Min Temp:
-                            <span class = "tempMin5"></span>°F
+                            <span class = "tempMin5"></span>
                         </div>
                         <div>Wind:
-                            <span class = "wind5"></span> MPH
+                            <span class = "wind5"></span>
                         </div>
                         <div>Humidity:
-                            <span class = "humi5"></span>%
+                            <span class = "humi5"></span>
                         </div>
                     </div>
                 </div>
@@ -161,7 +150,7 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
         crossorigin="anonymous">
     </script>
-    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="assets/js/sript.js"></script>
 </body>
 </html>

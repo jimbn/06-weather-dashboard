@@ -1,26 +1,15 @@
 const apiKey = "&appid=5bbb7a356faba6df28c3a3229103f17a";
-let searchedCity = "Oakland";
-// let searchedCity = $("#searchedCity");
+// let searchedCity = "Oakland";
+let searchedCity;
+const searchPastCity = document.getElementsByClassName(`searchPastCity`);
 
 
-let locUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + searchedCity + apiKey;
-
-
-$(".search").on("click", function() {
-    // Set searched city
-    $("#city").text(searchedCity);
-    getCurrentApi();
-})
-
-
-
-// // Set current date 
-// $("#date").text(moment().format("L"));
-
-function getCurrentApi () {
+function getCurrentApi (searchedCity) {
+    let locUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + searchedCity + apiKey;
 
     fetch(locUrl)
         .then(function(response) {
+            console.log(locUrl);
             return response.json();
         })
         .then(function(data) {
@@ -36,42 +25,89 @@ function getCurrentApi () {
                     return response.json();
                 })
                 .then(function(data){
-                    $(`#date`).text(moment(data.current.dt*1000).format(`L`));
-                    $(`#currentDayForcast`).text(data.current.weather[0].icon);
-                    $(`#currentDayTemp`).text(data.current.temp);
-                    $(`#currentDayWind`).text(data.current.wind_speed);
-                    $(`#currentDayHumidity`).text(data.current.humidity);
+                    $(`#date`).text("(" + moment(data.current.dt*1000).format(`L`) + ")");
+                    $(`#currentDayForcast`).attr("src", "http://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png");
+                    $(`#currentDayTemp`).text(data.current.temp + " °F");
+                    $(`#currentDayWind`).text(data.current.wind_speed + " MPH");
+                    $(`#currentDayHumidity`).text(data.current.humidity + "%");
                     $(`#currentDayUV`).text(data.current.uvi);
+                    $(`#currentDayUV`).attr('style', `background-color: ${uvIndexColor(data.current.uvi)}; color: white`);
                     $(`.day1`).text(moment(data.daily[1].dt*1000).format(`L`));
-                    $(`.forc1`).text(data.daily[1].weather[0].icon);
-                    $(`.tempMax1`).text(data.daily[1].temp.max);
-                    $(`.tempMin1`).text(data.daily[1].temp.min);
-                    $(`.wind1`).text(data.daily[1].wind_speed);
-                    $(`.humi1`).text(data.daily[1].humidity);
+                    $(`.forc1`).attr("src", "http://openweathermap.org/img/wn/" + data.daily[1].weather[0].icon + "@2x.png");
+                    $(`.tempMax1`).text(data.daily[1].temp.max + " °F");
+                    $(`.tempMin1`).text(data.daily[1].temp.min + " °F");
+                    $(`.wind1`).text(data.daily[1].wind_speed + " MPH");
+                    $(`.humi1`).text(data.daily[1].humidity + "%");
                     $(`.day2`).text(moment(data.daily[2].dt*1000).format(`L`));
-                    $(`.forc2`).text(data.daily[2].weather[0].icon);
-                    $(`.tempMax2`).text(data.daily[2].temp.max);
-                    $(`.tempMin2`).text(data.daily[2].temp.min);
-                    $(`.wind2`).text(data.daily[2].wind_speed);
-                    $(`.humi2`).text(data.daily[2].humidity);
+                    $(`.forc2`).attr("src", "http://openweathermap.org/img/wn/" + data.daily[2].weather[0].icon + "@2x.png");
+                    $(`.tempMax2`).text(data.daily[2].temp.max + " °F");
+                    $(`.tempMin2`).text(data.daily[2].temp.min + " °F");
+                    $(`.wind2`).text(data.daily[2].wind_speed + " MPH");
+                    $(`.humi2`).text(data.daily[2].humidity + "%");
                     $(`.day3`).text(moment(data.daily[3].dt*1000).format(`L`));
-                    $(`.forc3`).text(data.daily[3].weather[0].icon);
-                    $(`.tempMax3`).text(data.daily[3].temp.max);
-                    $(`.tempMin3`).text(data.daily[3].temp.min);
-                    $(`.wind3`).text(data.daily[3].wind_speed);
-                    $(`.humi3`).text(data.daily[3].humidity);
+                    $(`.forc3`).attr("src", "http://openweathermap.org/img/wn/" + data.daily[3].weather[0].icon + "@2x.png");
+                    $(`.tempMax3`).text(data.daily[3].temp.max + " °F");
+                    $(`.tempMin3`).text(data.daily[3].temp.min + " °F");
+                    $(`.wind3`).text(data.daily[3].wind_speed + " MPH");
+                    $(`.humi3`).text(data.daily[3].humidity + "%");
                     $(`.day4`).text(moment(data.daily[4].dt*1000).format(`L`));
-                    $(`.forc4`).text(data.daily[4].weather[0].icon);
-                    $(`.tempMax4`).text(data.daily[4].temp.max);
-                    $(`.tempMin4`).text(data.daily[4].temp.min);
-                    $(`.wind4`).text(data.daily[4].wind_speed);
-                    $(`.humi4`).text(data.daily[4].humidity);
+                    $(`.forc4`).attr("src", "http://openweathermap.org/img/wn/" + data.daily[4].weather[0].icon + "@2x.png");
+                    $(`.tempMax4`).text(data.daily[4].temp.max + " °F");
+                    $(`.tempMin4`).text(data.daily[4].temp.min + " °F");
+                    $(`.wind4`).text(data.daily[4].wind_speed + " MPH");
+                    $(`.humi4`).text(data.daily[4].humidity + "%");
                     $(`.day5`).text(moment(data.daily[5].dt*1000).format(`L`));
-                    $(`.forc5`).text(data.daily[5].weather[0].icon);
-                    $(`.tempMax5`).text(data.daily[5].temp.max);
-                    $(`.tempMin5`).text(data.daily[5].temp.min);
-                    $(`.wind5`).text(data.daily[5].wind_speed);
-                    $(`.humi5`).text(data.daily[5].humidity);
+                    $(`.forc5`).attr("src", "http://openweathermap.org/img/wn/" + data.daily[5].weather[0].icon + "@2x.png");
+                    $(`.tempMax5`).text(data.daily[5].temp.max + " °F");
+                    $(`.tempMin5`).text(data.daily[5].temp.min + " °F");
+                    $(`.wind5`).text(data.daily[5].wind_speed + " MPH");
+                    $(`.humi5`).text(data.daily[5].humidity + "%");
                 })
         })
 }
+
+function uvIndexColor(uvi) {
+    if(uvi<3) {
+        return 'green';
+    } else if (uvi >= 3 && uvi < 8) {
+        return 'yellow';
+    } else {
+        return 'red';
+    }
+}
+
+let searchedCityHistory = JSON.parse(localStorage.getItem('searchCityHistory')) || [];
+let maxHistory = 5;
+
+const addSearch = ()=>{
+    let newSearch = searchedCity;
+    searchedCityHistory.push(newSearch);
+    // historyArray.splice(5);
+    localStorage.setItem('searchCityHistory', JSON.stringify(searchedCityHistory));
+}
+
+
+
+function showHistory() {
+    for (i = 0; i < searchedCityHistory.length; i++) {
+        let cityHistoryBtn = document.createElement('button');
+        cityHistoryBtn.className = "searchPastCity"
+        $("#searchedHistory").append(cityHistoryBtn);
+        cityHistoryBtn.textContent = searchedCityHistory[i];
+        cityHistoryBtn.addEventListener('click', function() {
+            $("#city").text(this.textContent);
+            getCurrentApi(this.textContent); 
+        })
+    }
+}
+
+
+$("#search").on("click", function() {
+    searchedCity = document.getElementById(`searchedCity`).value;
+    // Set searched city
+    $("#city").text(searchedCity);
+    getCurrentApi(searchedCity);
+    addSearch();
+})
+
+showHistory();
