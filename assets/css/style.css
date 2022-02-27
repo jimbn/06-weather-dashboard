@@ -1,4 +1,7 @@
-
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 650;
+}
 
 header {
     background-image: linear-gradient(to right, rgb(93, 130, 231), #00008b);
@@ -7,19 +10,60 @@ header {
     padding: 10px;
 }
 
+button {
+    padding: 5px;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    background-color: lightgray;
+    color: black;
+    margin: 10px 0;
+}
+
+img {
+    width: 50px;
+}
+
+#search {
+    background-color: rgb(93, 130, 231);
+    color: white;
+}
+
+.search-panel h2, #searchedCity, #search, .searchPastCity {
+    margin: 10px 0;
+}
+
+.search-panel {
+    margin: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid grey ;
+
+}
+
+#searchedHistory, #fiveDay-forcast {
+    margin: 10px;
+}
+
 .currentDay {
     border: black;
     border-style: solid;
     border-width: 2px;
     margin: 10px;
+    padding: 10px;
 }
 
-#fiveDay-forcast {
-    margin: 10px;
+.currentDay h2 {
+    display:flex;
+    flex-direction: row;
+}
+
+#city, #date, #currentDayForcast {
+    margin: 5px;
 }
 
 .fiveDay {
     color: white;
-    background-color: rgb(70, 70, 224);
+    background-color: #00008b;
     margin: 10px;
+    padding: 10px;
 }
