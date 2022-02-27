@@ -31,7 +31,7 @@ function getCurrentApi (searchedCity) {
                     $(`#currentDayWind`).text(data.current.wind_speed + " MPH");
                     $(`#currentDayHumidity`).text(data.current.humidity + "%");
                     $(`#currentDayUV`).text(data.current.uvi);
-                    $(`#currentDayUV`).attr('style', `background-color: ${uvIndexColor(data.current.uvi)}; color: white`);
+                    $(`#currentDayUV`).attr('style', `background-color: ${uvIndexColor(data.current.uvi)}; color: white; padding: 2px 5px; border-radius: 5px `);
                     $(`.day1`).text(moment(data.daily[1].dt*1000).format(`L`));
                     $(`.forc1`).attr("src", "https://openweathermap.org/img/wn/" + data.daily[1].weather[0].icon + "@2x.png");
                     $(`.tempMax1`).text(data.daily[1].temp.max + " °F");

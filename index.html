@@ -17,7 +17,7 @@
     </header>
     <div class="row">
         <div class="col-4">
-            <div>
+            <div class="row search-panel">
                 <h2>Search for a City:</h2>
                 <input type="text" name="searchedCity" id="searchedCity" placeholder="City Name" />
                 <button id="search">Search</button>
@@ -30,10 +30,9 @@
             <div id ="day0" class = "currentDay">
                 <h2>
                     <div id = "city"></div>
-                    <div><span id = "date"></span></div>
+                    <div id = "date"></div>
                     <img id = "currentDayForcast" />
-
-                </h2>
+                </h2>  
                 <div>Temp:
                     <span id="currentDayTemp"></span>
                 </div>
@@ -49,7 +48,6 @@
             </div>
             <div id = "fiveDay-forcast">
                 <h3>5-Day Forecast:</h3>
-                <br>
                 <div class = "row">
                     <div id = "day1" class = "col fiveDay">
                         <div>
