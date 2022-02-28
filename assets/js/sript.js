@@ -1,5 +1,4 @@
 const apiKey = "&appid=5bbb7a356faba6df28c3a3229103f17a";
-// let searchedCity = "Oakland";
 let searchedCity;
 const searchPastCity = document.getElementsByClassName(`searchPastCity`);
 let searchedCityHistory = JSON.parse(localStorage.getItem('searchCityHistory')) || [];
@@ -10,17 +9,12 @@ function getCurrentApi (searchedCity) {
 
     fetch(locUrl)
         .then(function(response) {
-            console.log(locUrl);
             return response.json();
         })
         .then(function(data) {
-            console.log(data);
-            console.log(data[0].lat);
             let lat = data[0].lat;
-            console.log(data[0].lon);
             let lon = data[0].lon
             let currentUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial&exclude=minutely,hourly,alerts" + apiKey;
-            console.log(currentUrl);
             fetch(currentUrl)
                 .then(function(response) {
                     return response.json();
@@ -81,7 +75,6 @@ function uvIndexColor(uvi) {
 const addSearch = ()=>{
     let newSearch = searchedCity;
     searchedCityHistory.push(newSearch);
-    // historyArray.splice(5);
     localStorage.setItem('searchCityHistory', JSON.stringify(searchedCityHistory));
 }
 
