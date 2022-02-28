@@ -16,7 +16,7 @@ All city searches are saved locally. Upon clicking on the city in the search his
 https://jimbn.github.io/06-weather-dashboard/
 
 ## Screenshot
-![alt text](assets\screenshot\Screenshot.png?raw=true)
+![alt text](assets\screenshot\Screenshot.png)
 
 ## Contribution
 Jim Nguyen
