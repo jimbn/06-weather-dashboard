@@ -2,6 +2,7 @@ const apiKey = "&appid=5bbb7a356faba6df28c3a3229103f17a";
 // let searchedCity = "Oakland";
 let searchedCity;
 const searchPastCity = document.getElementsByClassName(`searchPastCity`);
+let searchedCityHistory = JSON.parse(localStorage.getItem('searchCityHistory')) || [];
 
 
 function getCurrentApi (searchedCity) {
@@ -76,8 +77,6 @@ function uvIndexColor(uvi) {
     }
 }
 
-let searchedCityHistory = JSON.parse(localStorage.getItem('searchCityHistory')) || [];
-let maxHistory = 5;
 
 const addSearch = ()=>{
     let newSearch = searchedCity;
@@ -85,8 +84,6 @@ const addSearch = ()=>{
     // historyArray.splice(5);
     localStorage.setItem('searchCityHistory', JSON.stringify(searchedCityHistory));
 }
-
-
 
 function showHistory() {
     for (i = 0; i < searchedCityHistory.length; i++) {
@@ -101,13 +98,20 @@ function showHistory() {
     }
 }
 
-
 $("#search").on("click", function() {
     searchedCity = document.getElementById(`searchedCity`).value;
     // Set searched city
     $("#city").text(searchedCity);
     getCurrentApi(searchedCity);
     addSearch();
+    $("#searchedHistory").empty();
+    showHistory ();
 })
+
+$("#clear").on("click", function () {
+    $("#searchedHistory").empty();
+    localStorage.clear();
+    return;
+});
 
 showHistory();
